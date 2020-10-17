@@ -10,13 +10,15 @@ import './Chat-Shell.css';
 import {conversations } from '../../data/conversations'
 import { messages } from '../../data/messages'
 
-function ChatShell() {
+const  ChatShell =()=> {
+
+    const selectedConversation = conversations[2]
     return (
         <div id="chat-container">
             <ChatSearch />
             <ConversationList conversations={conversations} />
             <NewConversation />
-            <ChatTitle />
+            <ChatTitle selectedConversation={selectedConversation}/>
             <MessageList messages={messages} />
             <ChatForm />
         </div>

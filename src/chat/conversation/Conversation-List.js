@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './Conversation-List.css';
 import ConversationItem from './ConversationItem'
@@ -14,6 +14,7 @@ const ConversationList = (props) => {
             conversation={conversation} />
         )
     })
+
     return (
         <div id="conversation-list">
             {LoadConversations}
