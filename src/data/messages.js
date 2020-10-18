@@ -2,14 +2,14 @@ export const messages=[
     {
         imageUrl:require("../images/profiles/daryl.png"),
         imageAlt:"Keeya",
-        messageText:"Damn  I thought you would never leave",
+        messageText:"Damn, shit works",
         sentAt:"just now",
         isMyMessage:true
     },
     {
         imageUrl:require("../images/profiles/sarah.jpeg"),
         imageAlt:"Sherry",
-        messageText:"I know dear but am sorry for hurting you, I have realised i still love you.",
+        messageText:"Hey check if it works.",
         sentAt:"1 minute ago",
         isMyMessage:false
     },
