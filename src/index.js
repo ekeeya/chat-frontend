@@ -5,9 +5,11 @@ import App from './App';
 //import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import store from "./redux/store";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
     <Provider store={store}>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <App />
     </Provider>, 
     document.getElementById('root')

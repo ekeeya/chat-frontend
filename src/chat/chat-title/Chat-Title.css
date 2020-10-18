@@ -1,11 +1,12 @@
 #chat-title {
     display: grid;
-    grid: 36px / 1fr 36px;
+    grid: 36px / 1fr 33%;
     align-content: center;
     align-items: center;
     grid-area: chat-title;
-    background: #eee;
-    color: #0048AA;
+    background:#2d2e57;
+    color: #757899;
+    width:100%;
     font-weight: bold;
     font-size: 2.0rem;
     border-radius: 0 10px 0 0;

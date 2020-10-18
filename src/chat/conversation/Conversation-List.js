@@ -5,13 +5,16 @@ import ConversationItem from './ConversationItem'
 
 
 const ConversationList = (props) => {
-    let selectedConversationIndex =0;
+    let selectedConversationIndex =props.selectedConversationIndex;
     const LoadConversations = props.conversations.map((conversation, idx) => {
         return (
             <ConversationItem 
-            key={idx} 
-            isActive={idx === selectedConversationIndex}
-            conversation={conversation} />
+                key={idx}
+                index = {idx} 
+                isActive={idx === selectedConversationIndex}
+                conversation={conversation}
+                clicked = {props.clicked}
+            />
         )
     })
 

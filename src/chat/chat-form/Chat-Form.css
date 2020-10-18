@@ -1,5 +1,5 @@
 #chat-form {
-    background: #eee;
+    background: #33345f;
   }
   
   #chat-form > img {
@@ -7,23 +7,36 @@
   }
   
   #chat-form {
-    display: grid;
-    grid: 51px / 32px 1fr;
+    display: column;
     align-content: center;
     align-items: center;
-    grid-gap: 15px;
     grid-area: chat-form;
     border-radius: 0 0 10px 0;
+    height:100px;
     border-top: 1px solid rgba(0,0,0,0.25);
+    border-left: 1px solid rgba(0,0,0,0.25);
     padding-left: 42px;
     padding-right: 22px;
   }
-  
+  #chat-utilities{
+    background: #3f4269;
+    color: #757899;
+    margin-top: 15px;
+    border-radius: 80px;
+  }
   #chat-form input {
     outline: none;
-    padding: 15px;
-    border: 2px solid #ddd;
-    color: #330;
-    border-radius: 6px;
+    margin-left: 20px;
+    width:60%;
+    border: 2px solid#3f4269;
+    background: #3f4269;
+    color: #fff;
+    height:50px;
     font-size: 1.4rem;
+  }
+  .formIcon{
+    color:#757899;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 30pt;
   }

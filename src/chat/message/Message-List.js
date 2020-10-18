@@ -5,7 +5,8 @@ import Message from './Message'
 const  MessageList =(props) =>{
 
     const loadMessages = props.messages.map((message,idx)=>{
-        return (<Message key={idx} message={message} />)
+        return (
+        <Message key={idx} message={message} />)
     })
     return (
         <div id="chat-message-list">

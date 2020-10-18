@@ -9,7 +9,7 @@ const ConversationItem =(props) =>{
     }
     const { imageUrl, title,createddAt,latestMessageText} = props.conversation
     return (
-        <div className={className} >
+        <div className={className} onClick={()=>{props.clicked(props.index)}}>
                 <img src={imageUrl} alt={title} />
                 <div className="title-text">{title}</div>
                 <div className="created-date">{createddAt}</div>

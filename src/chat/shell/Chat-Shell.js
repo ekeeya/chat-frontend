@@ -9,20 +9,25 @@ import './Chat-Shell.css';
 import { connect } from 'react-redux'
 import { getConversations } from "../../redux/actions/conversations"
 import { getMessages } from "../../redux/actions/messages"
+import { selectConversation } from "../../redux/actions/selectConversation"
 
 const  ChatShell =(props)=> {
     props.fetchConversations()
     props.fetchMessages()
-    let selectedConversation = {}
-    if (props.conversations.length >0){
-        selectedConversation = props.conversations[0]
+    
+    const isSelected = (idx)=>{
+        props.toggleConversations(idx,props.conversations)
     }
     return (
         <div id="chat-container">
             <ChatSearch />
-            <ConversationList conversations={props.conversations} />
+            <ConversationList 
+                conversations={props.conversations}
+                clicked ={isSelected} 
+                selectedConversationIndex={props.selectedConversationIndex}
+            />
             <NewConversation />
-            <ChatTitle selectedConversation={selectedConversation}/>
+            <ChatTitle selectedConversation={props.selectedConversation}/>
             <MessageList messages={props.messages} />
             <ChatForm />
         </div>
@@ -32,14 +37,18 @@ const  ChatShell =(props)=> {
 const mapStateToProps = (state) => {
     return {
       conversations: state.conversations.conversations,
-      messages: state.messages.messages
+      messages: state.messages.messages,
+      selectedConversation:state.selectConversation.selectedConversation,
+      selectedConversationIndex:state.selectConversation.selectedConversationIndex
+
     }
   }
 
 const  mapDispatchToProps=(dispatch)=> {
     return {
         fetchConversations: () => dispatch(getConversations()),
-        fetchMessages: ()=>dispatch(getMessages())
+        fetchMessages: ()=>dispatch(getMessages()),
+        toggleConversations:(index,conversations)=>dispatch(selectConversation(index,conversations))
     }
 }
 

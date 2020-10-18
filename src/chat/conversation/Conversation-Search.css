@@ -2,10 +2,10 @@
     display: grid;
     align-items: center;
     grid-area: search-container;
-    background: #0048AA;
+    background: #33345f;
     padding: 0 20px;
     border-radius: 10px 0 0 0;
-    box-shadow: 0 1px 3px -1px rgba(0,0,0,0.75);
+    box-shadow: 0 1px 3px -1px rgba(1,2,0,0.75);
     z-index: 1;
 }
   
@@ -13,8 +13,8 @@
     color: #eee;
     outline: none;
     font-weight: bold;
-    border-radius: 2px;
-    height: 30px;
+    border-radius: 25px;
+    height: 40px;
     border: 0;
     padding-left: 48px;
     padding-right: 20px;

@@ -1,23 +1,18 @@
 #new-message-container {
-    background: #0048AA;
+    background: #33345f;
   }
   
   #new-message-container {
     display: grid;
-    grid: 40px / 40px;
+    grid: 60px / 60px;
     align-content: center;
     grid-area: new-message-container;
+    height:100px;
     border-top: 1px solid rgba(0,0,0,0.25);
     border-radius: 0 0 0 10px;
     padding: 0 15px;
   }
-  
-  #new-message-container button {
-    display: flex;
-    justify-content: center ;
-    background: #eee;
-    border-radius: 100%;
-    color: #002C88;
-    text-decoration: none;
-    font-size: 3.6rem;
+  .iconButton{
+    background: #33345f;
+    color:'#fff'
   }

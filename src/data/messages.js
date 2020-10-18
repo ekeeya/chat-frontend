@@ -20,5 +20,4 @@ export const messages=[
         sentAt:"2 minute ago",
         isMyMessage:true
     }, 
-    
 ]
