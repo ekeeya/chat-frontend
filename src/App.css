@@ -18,7 +18,7 @@ html {
 body {
   display: grid;
   place-items: center center;
-  background: linear-gradient(to right, #da6b8e 0%,#bb5776 100%);
+  background: linear-gradient(to right, #ffff 0%,#ffff 100%);
 }
 
 ::-webkit-scrollbar {

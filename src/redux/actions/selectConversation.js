@@ -1,10 +1,13 @@
 
 
-export const selectConversation = (index, conversations) => {
+export const selectConversation = (conversationId, conversations) => {
     return (dispatch) => {
         try{
             if (conversations.length >0){
-                dispatch({ type: 'SELECT_CONVERSATION',index:index, data: conversations[index]})
+                const selectedConversation = conversations.find(
+                    conversation=>conversation.id===conversationId
+                )
+                dispatch({ type: 'SELECT_CONVERSATION',conversationId:conversationId, data: selectedConversation})
             }else{
                 dispatch({ type: 'SELECT_CONVERSATION', data:{} })
             }

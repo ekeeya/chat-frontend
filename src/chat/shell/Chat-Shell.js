@@ -8,15 +8,17 @@ import ChatForm from '../chat-form/Chat-Form';
 import './Chat-Shell.css';
 import { connect } from 'react-redux'
 import { getConversations } from "../../redux/actions/conversations"
-import { getMessages } from "../../redux/actions/messages"
 import { selectConversation } from "../../redux/actions/selectConversation"
-
+import { sendMsg } from '../../redux/actions/sendReceiveMsg'
 const  ChatShell =(props)=> {
     props.fetchConversations()
-    props.fetchMessages()
     
-    const isSelected = (idx)=>{
-        props.toggleConversations(idx,props.conversations)
+    const isSelected = (conversationId)=>{
+        props.toggleConversations(conversationId,props.conversations)
+    }
+    const sendMessage=(message)=>{
+        props.sendMessage(message)
+        console.log(message)
     }
     return (
         <div id="chat-container">
@@ -24,12 +26,12 @@ const  ChatShell =(props)=> {
             <ConversationList 
                 conversations={props.conversations}
                 clicked ={isSelected} 
-                selectedConversationIndex={props.selectedConversationIndex}
+                selectedConversationId={props.selectedConversationId}
             />
             <NewConversation />
             <ChatTitle selectedConversation={props.selectedConversation}/>
             <MessageList messages={props.messages} />
-            <ChatForm />
+            <ChatForm  sendMsg={sendMessage}/>
         </div>
     );
 }
@@ -37,9 +39,9 @@ const  ChatShell =(props)=> {
 const mapStateToProps = (state) => {
     return {
       conversations: state.conversations.conversations,
-      messages: state.messages.messages,
+      messages: state.selectConversation.messages,
       selectedConversation:state.selectConversation.selectedConversation,
-      selectedConversationIndex:state.selectConversation.selectedConversationIndex
+      selectedConversationId:state.selectConversation.selectedConversationId
 
     }
   }
@@ -47,8 +49,8 @@ const mapStateToProps = (state) => {
 const  mapDispatchToProps=(dispatch)=> {
     return {
         fetchConversations: () => dispatch(getConversations()),
-        fetchMessages: ()=>dispatch(getMessages()),
-        toggleConversations:(index,conversations)=>dispatch(selectConversation(index,conversations))
+        toggleConversations:(id,conversations)=>dispatch(selectConversation(id,conversations)),
+        sendMessage:(message)=>dispatch(sendMsg(message))
     }
 }
 
